@@ -1,11 +1,16 @@
 public class Card {
 	
 	// this card's attributes
-	private int suit;
-	private int rank;
+	private Suit suit;
+	private Rank rank;
+	
+	public Card(Rank rank, Suit suit) {
+		this.rank = rank;
+		this.suit = suit;
+	}
 	
 	public String toString() {
-		return rank + " of " + suit + "";
+		return rank + " of " + suit + "s";
 	}
 
 }

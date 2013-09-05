@@ -1,8 +1,1 @@
-/*
- * Spade 
- * Club
- * Heart 
- * Diamond
- */
-
-public enum Suit { SPADE, CLUB, HEART, DIAMOND };
+public enum Suit { Spade, Club, Heart, Diamond };
