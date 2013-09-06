@@ -42,7 +42,7 @@ public class Card {
 		}
 		
 	}
-	
+	//hello
 	public Rank getRank() { 
 		return rank;
 	}
