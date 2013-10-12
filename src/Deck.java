@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Random;
 
 public class Deck {
 
@@ -15,26 +16,43 @@ public class Deck {
 				deck.add( new Card(ranks[r], suits[s]));
 			}
 		}
+		shuffle();
 	}
 	//hello
 	public void shuffle() {
-		
+		ArrayList<Card> nextdeck = new ArrayList<Card>();
+		Random gen = new Random();
+		while(deck.size() != 0) {
+			int randomCard = gen.nextInt(deck.size());
+			Card temp = deck.get(randomCard);
+			nextdeck.add(temp);
+			deck.remove(randomCard);
+		}
+		deck = nextdeck;
 	}
 	
 	/* draw()
 	 *  returns top card and removes it from deck
 	 */
 	public Card draw() {
-		Card card = deck.get(0);
-		deck.remove(0);
-		return card;
+		if(!empty()) {
+			Card card = deck.get(0);
+			deck.remove(0);
+			return card;
+		} else {
+			return null;
+		}
 	}
-	
+
 	/* size()
 	 *  returns current size of the deck
 	 */
 	public int size() {
 		return deck.size();
+	}
+	
+	public boolean empty() {
+		return deck.size() == 0;
 	}
 	
 	/* toString()
