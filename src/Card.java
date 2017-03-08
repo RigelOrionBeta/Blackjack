@@ -1,4 +1,5 @@
 public class Card {
+	//test
 	
 	// this card's attributes
 	private Suit suit;
